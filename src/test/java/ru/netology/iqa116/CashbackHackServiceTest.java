@@ -1,7 +1,7 @@
 package ru.netology.iqa116;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class CashbackHackServiceTest {
 
@@ -12,7 +12,7 @@ public class CashbackHackServiceTest {
         int actual = service.remain(900);
         int expected = 100;
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(actual, expected);
     }
 
     @Test //#2 - Нужно ли докупать, если покупка кратна 1000р?
@@ -22,7 +22,7 @@ public class CashbackHackServiceTest {
         int actual = service.remain(1_000);
         int expected = 0;
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(actual, expected);
     }
 
     @Test //№3 - Нужно ли докупать, если покупка более 1000р и делится с остатком
@@ -32,6 +32,6 @@ public class CashbackHackServiceTest {
         int actual = service.remain(2_500);
         int expected = 500;
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(actual, expected);
     }
 }
